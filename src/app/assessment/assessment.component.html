@@ -1,0 +1,32 @@
+<div class="example-form">
+  <h2>Assessment</h2>
+  <span class="required-field">* indicates a required field</span><br><br>
+  <form [formGroup]="questionForm">
+    <div formArrayName="questions">
+      <div *ngFor="let item of Questions; let i = index" class="box">
+        <div [formGroupName]=i>
+          <span class="required-field">*</span>
+          <mat-label for="question" class="example-full-width">Question {{i + 1}}:</mat-label><br><br>
+
+          <div id="question" required>{{item.questionText}}</div>
+
+          <mat-radio-group aria-label="Select an option" (change)="onItemChange($event.value,i)"
+            formControlName="Answer">
+            <mat-radio-button [value]="0">{{item.options[0]}}</mat-radio-button>
+            <mat-radio-button [value]="1">{{item.options[1]}}</mat-radio-button>
+            <mat-radio-button [value]="2">{{item.options[2]}}</mat-radio-button>
+            <mat-radio-button [value]="3">{{item.options[3]}}</mat-radio-button>
+          </mat-radio-group>
+
+          <div *ngIf="getValidity(i)" class="invalid-feedback">
+            Please select any one option.
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="example-button-row">
+      <button mat-flat-button color="primary" (click)="finalScore()">Submit</button>
+    </div>
+  </form>
+</div>

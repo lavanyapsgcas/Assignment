@@ -1,0 +1,23 @@
+<button mat-icon-button class="close-button" (click)="onClose()">
+  <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button><br>
+
+<div class="dialog-content">
+
+  <h2 mat-dialog-title>Your score is {{ data.score }}</h2>
+
+  <div class="score-result">
+    <div *ngIf="data.score < 60">
+      <p class="failure-message">You need to retake the assessment.</p>
+    </div>
+
+    <div *ngIf="data.score >= 60">
+      <p class="success-message">Good Job!
+        <mat-icon class="success-icon" color="primary">check_circle</mat-icon>
+      </p>
+
+      <button mat-flat-button class="quitBtn" (click)="quit()">Quit</button>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,53 @@
+.close-button {
+  float: right;
+  top: -2px;
+  right: -2px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.dialog-content {
+  text-align: center;
+
+  .score-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+
+    .success-message {
+      color: green;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+
+      .success-icon {
+        margin-left: 10px;
+        font-size: 1.5rem;
+        color: #4caf50;
+        /* Green color */
+        margin-bottom: 1rem;
+
+      }
+    }
+
+    .failure-message {
+      color: red;
+      font-weight: bold;
+    }
+  }
+
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .close-icon {
+    font-size: 24px;
+  }
+  .quitBtn{
+    color: #f92714;
+    background-color: #d1cbcb;
+  }
+}
